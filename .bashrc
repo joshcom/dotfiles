@@ -49,6 +49,15 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+###
+# Prompt
+###
+function parse_git_branch {
+  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
+}
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[33m\]`__git_ps1`\[\033[00m\]\$ '
+
 #if [ "$color_prompt" = yes ]; then
 #    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 #else
@@ -68,7 +77,7 @@ fi
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    #alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -81,6 +90,15 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# Aliases
+alias ls="ls -F --color"
+alias grep='grep --color=auto'
+alias grepper='egrep --color=auto -rI'
+alias grepperi='grepper -i'
+
+# rails aliases
+alias brake="bundle exec rake"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
