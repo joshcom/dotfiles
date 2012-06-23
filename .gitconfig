@@ -1,5 +1,6 @@
 [core]
   editor = vim
+	excludesfile = ~/.gitignore
 [user]
 	name = Joshua Murray
   email = joshua.murray@gmail.com
