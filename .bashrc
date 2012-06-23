@@ -79,6 +79,16 @@ alias grepperi='grepper -i'
 
 # rails aliases
 alias brake="bundle exec rake"
+alias braket="bundle exec rake test"
+alias braketu="bundle exec rake test:units"
+alias braketf="bundle exec rake test:functionals"
+
+# directory navigation
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -100,4 +110,20 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Import color helper variables
+if [ -f ~/.bash_colors ]; then
+    . ~/.bash_colors
+fi
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Welcome text
+TERMINAL_START=`date`
+echo -e "${BIWhite}${TERMINAL_START}"
+echo "Commands:"
+echo -e "\tgrepper"
+echo -e "\tgrepperi"
+echo -e "\tbrake"
+echo -e "\tbraket"
+echo -e "\t..5"
+echo -e "\tpushd/popd/dirs"
