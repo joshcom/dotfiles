@@ -127,3 +127,5 @@ echo -e "\tbrake"
 echo -e "\tbraket"
 echo -e "\t..5"
 echo -e "\tpushd/popd/dirs"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
