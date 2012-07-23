@@ -72,7 +72,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Aliases
-alias ls="ls -F --color"
+#alias ls="ls -F --color"
 alias grep='grep --color=auto'
 alias grepper='egrep --color=auto -rI'
 alias grepperi='grepper -i'
