@@ -197,12 +197,13 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+
     -- Custom key bindings
     awful.key({                   }, "XF86AudioRaiseVolume",    function () awful.util.spawn("amixer set Master 5+") end),
     awful.key({                   }, "XF86AudioLowerVolume",    function () awful.util.spawn("amixer set Master 5-") end),
-    awful.key({"Control", "Mod1"}, "l",    function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({"Control", "Mod1"}, "l",    function () awful.util.spawn("xscreensaver-command -lock") end), 
 
-    --  Default key bindings
+    -- Default
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
@@ -348,6 +349,15 @@ awful.rules.rules = {
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
+    -- Custom rules
+    { rule = { class = "Thunderbird" },
+      properties = { tag = tags[3][1] } },
+    { rule = { class = "Pidgin" },
+      properties = { tag = tags[3][1] } },
+    { rule = { class = "google-chrome" },
+      properties = { tag = tags[1][2] } },
+    { rule = { class = "Firefox" },
+      properties = { tag = tags[1][1] } },
 }
 -- }}}
 
