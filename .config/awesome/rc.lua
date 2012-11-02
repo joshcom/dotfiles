@@ -327,6 +327,9 @@ clientbuttons = awful.util.table.join(
     awful.button({ modkey }, 1, awful.mouse.client.move),
     awful.button({ modkey }, 3, awful.mouse.client.resize))
 
+-- Custom layout rules
+awful.tag.setproperty(tags[1][1], "mwfact", 0.70)
+
 -- Set keys
 root.keys(globalkeys)
 -- }}}
@@ -339,6 +342,9 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
+                     -- Nothing should ever open maximized
+                     maximized_vertical   = false,
+                     maximized_horizontal = false,
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
