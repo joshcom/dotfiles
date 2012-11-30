@@ -199,8 +199,12 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
 
     -- Custom key bindings
-    awful.key({                   }, "XF86AudioRaiseVolume",    function () awful.util.spawn("amixer set Master 5+") end),
-    awful.key({                   }, "XF86AudioLowerVolume",    function () awful.util.spawn("amixer set Master 5-") end),
+    awful.key({                   }, "XF86AudioRaiseVolume",  function () awful.util.spawn("amixer set Master 5+") end),
+    awful.key({                   }, "XF86AudioLowerVolume",  function () awful.util.spawn("amixer set Master 5-") end),
+    awful.key({                   }, "XF86Calculator",        function () awful.util.spawn("gcalctool") end), 
+    awful.key({                   }, "XF86HomePage",          function () awful.util.spawn("google-chrome") end), 
+    awful.key({                   }, "XF86Search",          function () awful.util.spawn("firefox --new-tab http://www.google.com/") end), 
+    awful.key({                   }, "XF86Mail",          function () awful.util.spawn("Thunderbird") end), 
     awful.key({"Control", "Mod1"}, "l",    function () awful.util.spawn("xscreensaver-command -lock") end), 
 
     -- Default
