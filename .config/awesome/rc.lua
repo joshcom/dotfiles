@@ -206,6 +206,7 @@ globalkeys = awful.util.table.join(
     awful.key({                   }, "XF86Search",          function () awful.util.spawn("firefox --new-tab http://www.google.com/") end), 
     awful.key({                   }, "XF86Mail",          function () awful.util.spawn("Thunderbird") end), 
     awful.key({"Control", "Mod1"}, "l",    function () awful.util.spawn("xscreensaver-command -lock") end), 
+    awful.key({ }, "Print", function () awful.util.spawn("scrot -u -e 'mv $f /home/joshua/public_html/snaps/ 2>/dev/null && echo http://plootarg.fbsdata.com/~joshua/snaps/$f | xclip -selection c'") end),
 
     -- Default
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
@@ -365,9 +366,9 @@ awful.rules.rules = {
     { rule = { class = "Pidgin" },
       properties = { tag = tags[3][1] } },
     { rule = { class = "google-chrome" },
-      properties = { tag = tags[1][2] } },
+      properties = { tag = tags[2][2] } },
     { rule = { class = "Firefox" },
-      properties = { tag = tags[1][1] } },
+      properties = { tag = tags[2][1] } },
 }
 -- }}}
 
