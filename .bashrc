@@ -116,6 +116,7 @@ if [ -f ~/.bash_colors ]; then
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export GOPATH=$HOME/go
 
 # Welcome text
 TERMINAL_START=`date`
