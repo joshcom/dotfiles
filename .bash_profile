@@ -1,8 +1,8 @@
-if [ -f ~/.bashrc ]; then
-  source ~/.bashrc
-fi
 
-if [ -f ~/.bash_login ]; then
-  source ~/.bash_login
-fi
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+###
+# Prompt
+###
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[33m\] `parse_git_branch`\[\033[00m\]\$ '

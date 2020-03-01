@@ -30,6 +30,3 @@ pip-log.txt
 #VIM
 *.swp
 *.swo
-
-# Fat-finger VIM accidents
-1
