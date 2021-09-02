@@ -1,4 +1,8 @@
 #!/bin/bash
 
+sudo apt-get install -y tig cowsay fortune
 
-sudo apt-get install -y tig
+cp .bash* ~
+cp .vimrc ~
+cp -R .vim ~
+cp .tmux.conf ~
